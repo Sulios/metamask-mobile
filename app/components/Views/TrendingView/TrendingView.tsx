@@ -13,6 +13,7 @@ import {
   Icon,
   IconSize,
 } from '@metamask/design-system-react-native';
+import { useTailwind } from '@metamask/design-system-twrnc-preset';
 import { strings } from '../../../../locales/i18n';
 import AppConstants from '../../../core/AppConstants';
 import { appendURLParams } from '../../../util/browser';
@@ -35,6 +36,7 @@ import PredictBuyPreview from '../../UI/Predict/views/PredictBuyPreview/PredictB
 import QuickActions from './components/QuickActions/QuickActions';
 import SectionHeader from './components/SectionHeader/SectionHeader';
 import { HOME_SECTIONS_ARRAY } from './config/sections.config';
+import ButtonLink from '../../../component-library/components/Buttons/Button/variants/ButtonLink';
 
 const Stack = createStackNavigator();
 
