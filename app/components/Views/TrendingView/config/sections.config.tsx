@@ -205,21 +205,21 @@ export const SECTIONS_CONFIG: Record<SectionId, SectionConfig> = {
   },
   sites: {
     id: 'sites',
-    title: 'Sites', // TODO: Add translation string
+    title: strings('trending.sites'),
+    icon: IconName.Global,
     viewAllAction: (navigation) => {
       navigation.navigate(Routes.SITES_LIST_VIEW);
     },
-    renderRowItem: (item, navigation) => (
+    RowItem: ({ item, navigation }) => (
       <SiteRowItemWrapper site={item as SiteData} navigation={navigation} />
     ),
-    renderSkeleton: () => <SiteSkeleton />,
+    Skeleton: () => <SiteSkeleton />,
     getSearchableText: (item) =>
       `${(item as SiteData).name} ${(item as SiteData).displayUrl}`.toLowerCase(),
     keyExtractor: (item) => `site-${(item as SiteData).id}`,
-    renderSection: () => <SectionCard sectionId="sites" />,
+    Section: () => <SectionCard sectionId="sites" />,
     useSectionData: () => {
-      const { sites, isLoading } = useSitesData({ limit: 10 });
-
+      const { sites, isLoading } = useSitesData({ limit: 100 });
       return { data: sites, isLoading };
     },
   },

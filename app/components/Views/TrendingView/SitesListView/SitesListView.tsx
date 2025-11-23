@@ -60,7 +60,6 @@ const SitesListView: React.FC = () => {
       <Box twClassName="px-4 pb-3">
         <ExploreSearchBar
           type="interactive"
-          isSearchFocused
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
           onCancel={handleSearchCancel}
